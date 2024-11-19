@@ -10,16 +10,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
-public class SelenideListenerTest {
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://github.com/";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 5000; // default 4000
-
-    }
+public class SelenideListenerTest extends LessonTenBeforeAll{
 
     @Test
     public  void testIssuesSearch(){
@@ -32,5 +23,6 @@ public class SelenideListenerTest {
         $(withText("#80")).should(Condition.exist);
 
     }
+
 
 }
